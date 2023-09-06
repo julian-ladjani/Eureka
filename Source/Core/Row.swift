@@ -53,7 +53,7 @@ open class RowOf<T>: BaseRow where T: Equatable {
     open var value: T? {
         set (newValue) {
             _value = newValue
-            guard let _ = section?.form else { return }
+            //guard let _ = section?.form else { return }
             wasChanged = true
             if validationOptions.contains(.validatesOnChange) || (wasBlurred && validationOptions.contains(.validatesOnChangeAfterBlurred)) ||  (!isValid && validationOptions != .validatesOnDemand) {
                 validate()
